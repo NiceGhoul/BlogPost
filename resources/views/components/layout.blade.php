@@ -10,6 +10,9 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/mf107l0fp9u61csjnp37b8e1zjvl04i1chv2xgzq0pouljf5/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+
 </head>
 <body class="h-full">
     <div class="min-h-full">

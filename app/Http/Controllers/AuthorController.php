@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,12 +17,12 @@ class AuthorController extends Controller
     }
     public function edit()
     {
-        // Fetch only the posts of the currently authenticated user
         $user = Auth::user();
         // if (!$user) {
         //     dd('No user is authenticated');
         // }
         $posts = Post::where('author_id', $user->id)->latest()->paginate(10)->withQueryString();
-        return view('edit', ['title' => 'Blog', 'posts' => $posts]);
+        $categories = Category::all();
+        return view('edit', ['title' => 'Blog', 'posts' => $posts, 'categories' => $categories]);
     }
 }

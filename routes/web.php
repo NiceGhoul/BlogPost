@@ -48,6 +48,9 @@ Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 Route::get('/edit', [AuthorController::class, 'edit'])->middleware('auth');
 
+Route::post('/posts', [PostController::class, 'store'])->middleware('auth');
+Route::delete('/posts/{post}', [PostController::class, 'destroy'])->middleware('auth');
+
 Route::get('/authors/{user:username}', [AuthorController::class, 'show']);
 Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');

@@ -26,7 +26,7 @@ return new class extends Migration
                 indexName:'posts_category_id'
             );
             $table->String('slug')->unique();
-            $table->text('body')->nullable();
+            $table->text('body');
             $table->timestamps();
         });
     }

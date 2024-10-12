@@ -49,7 +49,13 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 Route::get('/edit', [AuthorController::class, 'edit'])->middleware('auth');
 
 Route::post('/posts', [PostController::class, 'store'])->middleware('auth');
+
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->middleware('auth');
+Route::delete('/posts/all', [PostController::class, 'all']);
+
+Route::get('/posts/{post}/edit', [PostController::class, 'editPost'])->name('posts.edit');
+
+Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
 
 Route::get('/authors/{user:username}', [AuthorController::class, 'show']);
 Route::get('/categories/{category:slug}', [CategoryController::class, 'show']);
@@ -58,3 +64,4 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+
